@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content%}
+{#The | and filter gives an option to use python builtins#}
+<h1>This is home page for {{ name|upper }}</h1>
+
+<h2>Puppy image</h2>
+<img src="../static/puppy.jpg" height="600", width="300">
+<br>
+<a href="{{ url_for('static', filename='puppy.jpg') }}">Click here to see a bigger image</a>
+
+<h4> My name is {{ name|capitalize }}</h4>
+<label>My Introduction is</label>
+<p>
+    <ul>
+        {% for desc in puppy_description %}
+        <li> {{desc}}</li>
+        {% endfor %}
+    </ul>
+</p>
+<label>The Details is</label>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        {% for item, value in dict_puppy_detailed.items() %}
+    <tr>
+        <td>{{item}}</td>
+        <td>{{value}}</td>
+    <tr>
+        {% endfor %}
+    </tr>
+</table>
+
+{% endblock %}

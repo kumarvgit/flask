@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puppy Submit</title>
+</head>
+<body>
+<p>
+  {% if breed %}
+    The breed you entered is {{breed}}
+  {%else%}
+    Please enter yor breed
+  {% endif %}
+</p>
+  <form method="POST">
+    {{form.hidden_tag()}}
+    {#connected to InfoForm class#}
+    {{form.breed.label}} {{form.breed()}}
+    {{form.submit()}}
+  </form>
+</body>
+</html>
