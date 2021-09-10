@@ -3,7 +3,6 @@ from flask_wtf import FlaskForm
 from wtforms import (StringField, BooleanField, DateTimeField,
                      RadioField, SelectField,
                      TextField, TextAreaField, SubmitField)
-
 from wtforms.validators import DataRequired
 
 from wtforms import StringField, SubmitField
@@ -14,7 +13,7 @@ app.config['SECRET_KEY'] = 'mykey'
 
 
 class InfoForm(FlaskForm):
-    breed = StringField("what breed are you", validators=['DateRequired()'])
+    breed = StringField("what breed are you", validators=[DataRequired()])
     neutered = BooleanField("Have you been neutered")
     mood = RadioField('Please choose a mood',
                       choices=[
