@@ -51,6 +51,8 @@ def index():
 
 @app.route('/thankyou')
 def thankyou():
+    # We dont need to pass on the session object since it is a special object
+    # and will be available throughout
     return render_template('thankyou.html')
 
 

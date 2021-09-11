@@ -5,18 +5,23 @@
     <title>Puppy Submit</title>
 </head>
 <body>
-<p>
-  {% if breed %}
-    The breed you entered is {{breed}}
-  {%else%}
-    Please enter yor breed
-  {% endif %}
-</p>
-  <form method="POST">
-    {{form.hidden_tag()}}
-    {#connected to InfoForm class#}
-    {{form.breed.label}} {{form.breed()}}
-    {{form.submit()}}
-  </form>
+<h1>General Puppy survey</h1>
+<form method="POST">
+  {{form.hidden_tag()}}
+  {#connected to InfoForm class#}
+
+  {{form.breed.label}} {{form.breed}}
+  <br>
+  {{form.neutered.label}} {{form.neutered}}
+  <br>
+  {{form.food_choice.label}} {{form.food_choice}}
+  <br>
+  {{form.mood.label}} {{form.mood}}
+  <br>
+  Any Other feedback
+  {{form.feedback.label}} {{form.feedback}}
+  <br>
+  {{form.submit()}}
+</form>
 </body>
 </html>
